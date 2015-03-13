@@ -413,12 +413,9 @@ void doEnergy(){
   float temp = 0.0;
   int tempI = 0;
   int i = 0;
-  int j = 0;
 
   //measure volts
-  for(i = 0; i < 2; i++){
     voltAdc = analogRead(PIN_VOLTS);
-  }
     temp = adc2volts((float)voltAdc);
     //Serial.println(temp);
     //volts = temp;
@@ -433,9 +430,8 @@ void doEnergy(){
 
   // measure amps and calc energy
   for(i = 0; i < NUM_AMP_SENSORS; i++){
-      for(j = 0; j < 2; j++){
         ampsRaw[i] = analogRead(pinAmps[i]);
-      }
+        
         //ampsRaw[i] = ampsRaw[i] + sensorOffset[i];
         //tempI = ampsRaw[i] + sensorOffset[i];
         tempI = ampsRaw[i];
